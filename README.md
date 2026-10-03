@@ -32,3 +32,50 @@ flowchart LR
 | Data storage	| PostgreSQL |
 | Data querying	| SQL |
 | Monitoring / Visualization | Grafana |
+
+## Tech Stack
+Python
+
+Pandas
+
+Requests
+
+PostgreSQL
+
+SQL
+
+Grafana
+
+Git
+
+GitHub
+
+## Data Source
+
+The stock data is retrieved from the Alpha Vantage API using the TIME_SERIES_DAILY endpoint.
+
+### The pipeline works with the following stock symbols:
+
+AAPL
+
+GOOGL
+
+MSFT
+
+NFLX
+
+TSLA
+
+### The extracted data contains:
+
+Symbol
+
+Date
+
+Open price
+
+High price
+
+Low price
+
+Closing price
