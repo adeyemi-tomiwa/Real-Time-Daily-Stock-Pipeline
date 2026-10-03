@@ -79,3 +79,64 @@ High price
 Low price
 
 Closing price
+
+## Pipeline Walkthrough
+1. Extraction
+
+Python sends requests to the Alpha Vantage API to retrieve daily stock market data.
+
+The extracted responses are stored and processed in Python.
+
+2. Transformation
+
+The raw API response is converted into a structured Pandas DataFrame.
+
+The data is then:
+
+Converted to appropriate data types
+
+Checked for missing values
+
+Checked for duplicate records
+
+Sorted by stock symbol and date
+
+Prepared for analytical calculations
+
+3. Stock Metrics
+
+The pipeline calculates:
+
+7-Day Moving Average
+
+A rolling average of closing prices over seven trading days.
+
+20-Day Moving Average
+
+A rolling average of closing prices over twenty trading days.
+
+Percentage Change
+
+The percentage change in closing price between consecutive observations for each stock.
+
+4. Portfolio Calculation
+
+The pipeline also calculates daily portfolio values by grouping stock holding values by date.
+
+5. PostgreSQL
+
+The transformed datasets are loaded into PostgreSQL.
+
+The database contains separate tables for stock prices, calculated metrics, and portfolio values.
+
+6. SQL Analysis
+
+SQL queries are used to combine and analyze the stored datasets.
+
+The final analytical dataset combines stock information with calculated metrics and portfolio values.
+
+7. Grafana Monitoring
+
+Grafana connects to PostgreSQL and uses SQL queries to visualize the processed stock data.
+
+The dashboard is used to monitor stock performance and observe how the metrics change over time.
