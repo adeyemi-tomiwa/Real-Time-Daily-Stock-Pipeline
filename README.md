@@ -185,18 +185,12 @@ real-time-daily-stock-pipeline/
 ```
 
 ## How to Run
-### 1. Clone the repository
-```
-</> bash
-git clone <your-repository-url>
-cd real-time-daily-stock-pipeline
-```
 
-### 2. Install dependencies
+### 1. Install dependencies
 
 pip install pandas requests
 
-### 3. Configure your Alpha Vantage API key
+### 2. Configure your Alpha Vantage API key
 
 Store your API key as an environment variable:
 
@@ -204,7 +198,7 @@ ALPHAVANTAGE_API_KEY=your_api_key
 
 Do not commit your API key to GitHub.
 
-### 4. Run the Python notebook
+### 3. Run the Python notebook
 
 Open:
 
@@ -212,47 +206,49 @@ Stock ETL Pipeline (1).ipynb
 
 Run the extraction and transformation steps.
 
-### 5. Set up PostgreSQL
+### 4. Set up PostgreSQL
 
 Create the required PostgreSQL tables using:
 
 Daily_Stock ETL Pipeline.sql
 
-### 6. Connect Grafana
+### 5. Connect Grafana
 
 Connect Grafana to the PostgreSQL database and use SQL queries to build the monitoring visualizations.
 
 ## Key Concepts Demonstrated
+
 API data extraction
+
 Data transformation with Pandas
+
 Data type handling
+
 Duplicate and missing-value checks
+
 Rolling averages
+
 Percentage change calculations
+
 Portfolio aggregation
+
 PostgreSQL data storage
+
 SQL data analysis
+
 Grafana monitoring
-Git/GitHub version control
+
 Future Improvements
+
 Automate the daily extraction process
-Introduce scheduled execution
+
 Move API credentials completely into environment variables
+
 Add automated data quality checks
+
 Add Grafana alerts for significant price movements
+
 Improve pipeline error handling
+
 Automate the PostgreSQL loading process
-
-### Recommended GitHub structure
-
-I'd make the repository:
-
-```text
-real-time-daily-stock-pipeline/
-│
-├── README.md
-├── Stock ETL Pipeline (1).ipynb
-├── Daily_Stock ETL Pipeline.sql
-└── .gitignore
-
 
