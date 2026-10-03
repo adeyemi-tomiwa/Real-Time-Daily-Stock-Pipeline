@@ -137,6 +137,51 @@ The final analytical dataset combines stock information with calculated metrics 
 
 ### 7. Grafana Monitoring
 
+### stocks
+
+```text
+stocks
+├── id
+├── symbol
+├── date
+├── open
+├── high
+├── low
+└── close
+```text
+
+### metrics
+```text
+metrics
+├── id
+├── symbol
+├── date
+├── moving_average_7
+├── moving_average_20
+└── pct_change
+```text
+
+### portfolio
+```text
+portfolio
+├── id
+├── date
+└── portfolio_total
+```
+
+Key SQL Analysis
+
+The project uses SQL to combine stock prices, calculated metrics, and portfolio values into an analysis-ready dataset.
+
+It also queries the latest available metrics to identify percentage price changes across the tracked stocks.
+
+Project Structure
+real-time-daily-stock-pipeline/
+├── Stock ETL Pipeline (1).ipynb
+├── Daily_Stock ETL Pipeline.sql
+├── .gitignore
+└── README.md
+
 Grafana connects to PostgreSQL and uses SQL queries to visualize the processed stock data.
 
 The dashboard is used to monitor stock performance and observe how the metrics change over time.
