@@ -136,7 +136,11 @@ SQL queries are used to combine and analyze the stored datasets.
 The final analytical dataset combines stock information with calculated metrics and portfolio values.
 
 ### 7. Grafana Monitoring
+Grafana connects to PostgreSQL and uses SQL queries to visualize the processed stock data.
 
+The dashboard is used to monitor stock performance and observe how the metrics change over time.
+
+## Database Schema
 ### stocks
 
 ```text
@@ -148,10 +152,8 @@ stocks
 ├── high
 ├── low
 └── close
-```text
 
 ### metrics
-```text
 metrics
 ├── id
 ├── symbol
@@ -159,10 +161,8 @@ metrics
 ├── moving_average_7
 ├── moving_average_20
 └── pct_change
-```text
 
 ### portfolio
-```text
 portfolio
 ├── id
 ├── date
@@ -175,15 +175,84 @@ The project uses SQL to combine stock prices, calculated metrics, and portfolio 
 
 It also queries the latest available metrics to identify percentage price changes across the tracked stocks.
 
-Project Structure
+### Project Structure
+```text
 real-time-daily-stock-pipeline/
 ├── Stock ETL Pipeline (1).ipynb
 ├── Daily_Stock ETL Pipeline.sql
 ├── .gitignore
 └── README.md
+```
 
-Grafana connects to PostgreSQL and uses SQL queries to visualize the processed stock data.
+## How to Run
+### 1. Clone the repository
+```
+</> bash
+git clone <your-repository-url>
+cd real-time-daily-stock-pipeline
+```
 
-The dashboard is used to monitor stock performance and observe how the metrics change over time.
+### 2. Install dependencies
 
-## Database Schema
+pip install pandas requests
+
+### 3. Configure your Alpha Vantage API key
+
+Store your API key as an environment variable:
+
+ALPHAVANTAGE_API_KEY=your_api_key
+
+Do not commit your API key to GitHub.
+
+### 4. Run the Python notebook
+
+Open:
+
+Stock ETL Pipeline (1).ipynb
+
+Run the extraction and transformation steps.
+
+### 5. Set up PostgreSQL
+
+Create the required PostgreSQL tables using:
+
+Daily_Stock ETL Pipeline.sql
+
+### 6. Connect Grafana
+
+Connect Grafana to the PostgreSQL database and use SQL queries to build the monitoring visualizations.
+
+## Key Concepts Demonstrated
+API data extraction
+Data transformation with Pandas
+Data type handling
+Duplicate and missing-value checks
+Rolling averages
+Percentage change calculations
+Portfolio aggregation
+PostgreSQL data storage
+SQL data analysis
+Grafana monitoring
+Git/GitHub version control
+Future Improvements
+Automate the daily extraction process
+Introduce scheduled execution
+Move API credentials completely into environment variables
+Add automated data quality checks
+Add Grafana alerts for significant price movements
+Improve pipeline error handling
+Automate the PostgreSQL loading process
+
+### Recommended GitHub structure
+
+I'd make the repository:
+
+```text
+real-time-daily-stock-pipeline/
+│
+├── README.md
+├── Stock ETL Pipeline (1).ipynb
+├── Daily_Stock ETL Pipeline.sql
+└── .gitignore
+
+
