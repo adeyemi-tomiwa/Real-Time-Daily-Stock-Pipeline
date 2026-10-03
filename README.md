@@ -24,10 +24,10 @@ flowchart LR
     E --> F["Grafana"]
 ```
 ## Architecture Components
-Component |	Tool
-Data source	| Alpha Vantage API
-Data extraction	| Python
-Data transformation |	Python / Pandas
-Data storage	| PostgreSQL
-Data querying	| SQL
-Monitoring / Visualization	| Grafana
+| Component |	Tool
+| Data source	| Alpha Vantage API
+| Data extraction	| Python
+| Data transformation |	Python / Pandas
+| Data storage	| PostgreSQL
+| Data querying	| SQL
+| Monitoring / Visualization | Grafana
