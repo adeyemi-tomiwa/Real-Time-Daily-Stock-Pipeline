@@ -25,6 +25,7 @@ flowchart LR
 ```
 ## Architecture Components
 | Component |	Tool |
+
 | Data source	| Alpha Vantage API |
 | Data extraction	| Python |
 | Data transformation |	Python / Pandas |
