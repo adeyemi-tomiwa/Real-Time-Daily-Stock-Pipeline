@@ -251,4 +251,6 @@ Add Grafana alerts for significant price movements
 Improve pipeline error handling
 
 Automate the PostgreSQL loading process
+## Dashboard
+- <a href="http://localhost:3000/goto/eg0ak52isu6f4d?orgId=default">grafana dashboard</a>
 
